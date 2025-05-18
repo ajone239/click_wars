@@ -15,7 +15,7 @@ const GAME_LENGTH = 60 * 1000
 const OVER_MENU = 1 * 1000
 
 let game_state = GameState.MENU;
-let score = -1;
+let score = 0;
 let play_start;
 let can_go_to_menu = false
 
@@ -45,7 +45,7 @@ function draw() {
     }
 }
 
-function handleInteraction(_x, _y) {
+function handleInteraction() {
     switch (game_state) {
         case GameState.MENU:
             game_state = GameState.READY
@@ -125,12 +125,12 @@ function play_draw(button_text) {
 }
 
 function touchStarted() {
-    handleInteraction(0, 0);
+    handleInteraction();
 }
 
 function keyPressed() {
     if (key == ' ') {
-        handleInteraction(0, 0);
+        handleInteraction();
     }
 }
 
@@ -154,7 +154,7 @@ function start_menu() {
 
     stroke(Theme.back_highlight)
     strokeWeight(3)
-    fill(Theme.back_highlight2)
+    fill(Theme.back_highlight)
 
     rect(
         (width - menu_width) / 2,
@@ -192,7 +192,7 @@ function summary_menu() {
 
     stroke(Theme.accent1)
     strokeWeight(3)
-    fill(Theme.back_highlight2)
+    fill(Theme.accent1)
 
     rect(
         (width - menu_width) / 2,
@@ -216,7 +216,7 @@ function summary_menu() {
 
     fill(Theme.back_highlight)
     textSize(15)
-    text("Tap/press space to start...", width / 2, (height / 2) + 15);
+    text("Tap/press space to start...", width / 2, (height / 2) + 25);
 
     pop()
     pop()
