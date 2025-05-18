@@ -149,10 +149,10 @@ function credit() {
 function start_menu() {
     push()
 
-    const menu_height = 200
-    const menu_width = 200
+    const menu_height = 300
+    const menu_width = 300
 
-    stroke(Theme.back_highlight)
+    stroke(Theme.primary)
     strokeWeight(3)
     fill(Theme.back_highlight)
 
@@ -190,7 +190,7 @@ function summary_menu() {
     const menu_height = 300
     const menu_width = 300
 
-    stroke(Theme.accent1)
+    stroke(Theme.primary)
     strokeWeight(3)
     fill(Theme.accent1)
 
