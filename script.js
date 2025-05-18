@@ -43,6 +43,18 @@ function draw() {
             summary_menu();
             break;
     }
+
+    if (score > 420) {
+        textAlign(CENTER, CENTER);
+        push()
+        textSize(200)
+        text(
+            "👌",
+            width / 2,
+            height / 2
+        );
+        pop()
+    }
 }
 
 function handleInteraction() {
